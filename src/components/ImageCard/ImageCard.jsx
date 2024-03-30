@@ -1,9 +1,16 @@
 import css from "./ImageCard.module.css";
 
-const ImageCard = ({ url, desc }) => {
+const ImageCard = ({ image, onModalOpen }) => {
+  const { urls, desc } = image;
+
   return (
     <li>
-      <img className={css.img} src={url} alt={desc} />
+      <img
+        onClick={() => onModalOpen(image)}
+        className={css.img}
+        src={urls.small}
+        alt={desc}
+      />
     </li>
   );
 };
